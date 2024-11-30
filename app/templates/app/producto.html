@@ -1,0 +1,118 @@
+{% extends 'app/Base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/producto.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+  <!--SECCIÓN PRODUCTO-->
+
+  <div class="producto">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" >
+                <img src="{{ articulos.imagen.url }}" width="100%">
+
+            </div>
+            <div class="col-sm-8">
+                <div class="botones">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#carro">AGREGAR AL CARRO</button><br>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fav">AGREGAR A FAVORITOS</button>
+                </div>
+
+                <!--MODAL-->
+                <div class="modal fade" id="carro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar al carro de compras</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        El producto se ha agregado con éxito al carro!
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="fav" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar a favoritos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        El producto se ha agregado con éxito a favoritos!
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--TERMINA MODAL-->
+
+                <h2>{{articulo.nombre}}</h2>
+                <h3 style="position: relative;bottom:10px;">$ 10.000</h3>
+                <p>INFORMACIÓN DEL PRODUCTO</p>
+                <ul>
+                    <li>Título: {{articulos.nombre}}</li>
+                    <li>Editorial: {{articulos.idEditorial}}</li>
+                    <li>Autor: {{articulos.autor}}</li>
+                    <li>Formato: {{articulos.formato}}</li>
+                    <li>N° páginas: {{articulos.numPag}}</li>
+                </ul>
+                <h3>SINOPSIS</h3>
+                <p>{{articulos.descripcion}}</p>
+            </div>
+        </div>
+      </div>
+
+  </div><br>
+
+  <!--CARRUSEL-->
+
+  <div id="mycarousel" class="carousel slide" data-ride="carousel">
+  
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+          <img src="{% static 'app/image/ad_sp.png' %}" data-color="lightblue" alt="First Image">
+
+      </div>
+      <div class="item">
+          <img src="{% static 'app/image/ad_sp.png' %}" data-color="firebrick" alt="Second Image">
+      </div>
+      <div class="item">
+          <img src="{% static 'app/image/ad_sp.png' %}" data-color="violet" alt="Third Image">
+      </div>
+    </div>
+  
+    <!-- Controls -->
+    <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!--TERMINA CARRUSEL-->
+  
+  <!--PIE DE PÁGINA-->
+
+{% endblock %}

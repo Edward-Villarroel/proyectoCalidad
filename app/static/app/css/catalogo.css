@@ -1,0 +1,26 @@
+ #Botones{
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-bottom: 50px;
+  }
+
+  .cat-log{
+    width:80%;
+    display:flex;
+    margin:auto;
+    align-content: center;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  table{
+    border-collapse: separate; 
+    border-spacing:40px;
+    display:flex;
+    margin:auto;
+    align-content: center;
+    
+  }
+

@@ -1,0 +1,53 @@
+{% extends 'app/Base.html' %}
+
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/carrito.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<div class="container">
+  {% for c in items_carrito %}
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="{{ c.articulo.imagen.url }}" alt="Imagen de {{ c.articulo.nombre }}" style="width: 275px; height: 275px;">
+    </div>
+    <div class="col-sm-8">
+      <div class="botones">
+        <form action="{% url 'eliminar_del_carrito' c.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary" style="background-color: red;">ELIMINAR</button>
+        </form>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fav">AGREGAR A FAVORITOS</button>
+      </div>
+      <div class="content">
+        <h2>{{ c.articulo.nombre }}</h2>
+        <h3>${{ c.articulo.precio }}</h3>
+        <ul>
+          <li><strong>Título:</strong> {{ c.articulo.nombre }}</li>
+          <li><strong>Editorial:</strong> {{ c.articulo.idEditorial }}</li>
+          <li><strong>Autor:</strong> {{ c.articulo.autor }}</li>
+          <li><strong>Formato:</strong> {{ c.articulo.formato }}</li>
+          <li><strong>N° páginas:</strong> {{ c.articulo.numPag }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table">
+        <tr>
+          <td colspan="3"><strong>Total</strong></td>
+          <td><strong>${{ total }}</strong></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

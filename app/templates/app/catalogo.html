@@ -1,0 +1,106 @@
+{% extends 'app/Base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/catalogo.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+
+      <!--Catalogo-->
+      <!--By adding the <img> tag inside an <a> tag-->
+        <h1 id="title">CATÁLOGO</h1>
+        <div class="novedad">
+      
+          <table class="nov">
+            <tr>
+              <td>
+                <div class="card">
+                  <a href="producto.html"><img class="card-img-top" src="{% static 'app/image/cover/demian_hermann_hesse.jpg' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="producto.html"><h4 class="card-title">Demian</h4></a>
+                    <a href="producto.html"><p class="card-text">$ 10.000</p></a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="{% static 'app/image/cover/lost_at_sea.png' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="#"><h4 class="card-title">Lost At Sea</h4></a>
+                    <a href="#"><p class="card-text">$ 25.000</p></a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="{% static 'app/image/cover/1984.jpg' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="#"><h4 class="card-title">1984</h4></a>
+                    <a href="#"><p class="card-text">$ 7.500</p></a>
+                  </div>
+              </div>
+              </td>
+              <td>
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="{% static 'app/image/cover/fables.jpg' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="#"><h4 class="card-title">Fables</h4></a>
+                    <a href="#"><p class="card-text">$ 30.500</p></a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="{% static 'app/image/cover/xls00.png' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="#"><h4 class="card-title">Kabi Nagata</h4></a>
+                    <a href="#"><p class="card-text">$ 14.000</p></a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="{% static 'app/image/cover/paper_girls.jpg' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="#"><h4 class="card-title">Paper Girls</h4></a>
+                    <a href="#"><p class="card-text">$ 15.700</p></a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="{% static 'app/image/cover/paradise_kiss.jpg' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="#"><h4 class="card-title">Paradise Kiss</h4></a>
+                    <a href="#"><p class="card-text">$ 13.000</p></a>
+                  </div>
+              </div>
+              </td>
+              <td>
+                <div class="card">
+                  <a href="#"><img class="card-img-top" src="{% static 'app/image/cover/ppl.jpg' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="#"><h4 class="card-title">Papá Piernas-Largas</h4></a>
+                    <a href="#"><p class="card-text">$ 5.500</p></a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          </table>
+    
+      </div>
+
+    <div id="Botones">
+    <ul class="pager">
+        <li class="previous"><a href="#">Previous</a></li>
+        <li class="next"><a href="#">Next</a></li>
+      </ul>
+    </div>
+
+{% endblock %}

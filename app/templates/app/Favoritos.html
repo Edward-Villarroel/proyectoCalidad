@@ -1,0 +1,61 @@
+{% extends 'app/Base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/favoritos.css' %}">
+{% endblock %}
+
+{% block contenido %}
+      <h1>Favoritos</h1>
+    <div class="container">
+      <table class="nov">
+        <tr> <!--Table row-->
+          <td> <!--Item of a table-->
+              <div class="card">
+                  <a href="producto.html"><img class="card-img-top" src="{% static 'app/image/cover/demian_hermann_hesse.jpg' %}" alt="Card image"></a>
+                  <div class="card-body">
+                    <a href="producto.html"><h4 class="card-title">Demian</h4></a>
+                    <a href="producto.html"><p class="card-text">$ 10.000</p></a>
+                </div>
+              </div>
+
+          </td>
+          <td> <!--Item of a table-->
+            <div class="card">
+              <a href="producto.html"><img class="card-img-top" src="{% static 'app/image/cover/demian_hermann_hesse.jpg' %}" alt="Card image"></a>
+              <div class="card-body">
+                <a href="producto.html"><h4 class="card-title">Demian</h4></a>
+                <a href="producto.html"><p class="card-text">$ 10.000</p></a>
+            </div>
+          </div>
+
+          </td>
+          <td> <!--Item of a table-->
+            <div class="card">
+              <a href="producto.html"><img class="card-img-top" src="{% static 'app/image/cover/demian_hermann_hesse.jpg' %}" alt="Card image"></a>
+              <div class="card-body">
+                <a href="producto.html"><h4 class="card-title">Demian</h4></a>
+                <a href="producto.html"><p class="card-text">$ 10.000</p></a>
+            </div>
+          </div>
+
+          </td>
+          <td> <!--Item of a table-->
+            <div class="card">
+              <a href="producto.html"><img class="card-img-top" src="{% static 'app/image/cover/demian_hermann_hesse.jpg' %}" alt="Card image"></a>
+              <div class="card-body">
+                <a href="producto.html"><h4 class="card-title">Demian</h4></a>
+                <a href="producto.html"><p class="card-text">$ 10.000</p></a>
+            </div>
+          </div>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+
+
+{% endblock %}

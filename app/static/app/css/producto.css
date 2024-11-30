@@ -1,0 +1,29 @@
+/* PRODUCTO */
+
+.producto li{
+
+    list-style: inside;
+  }
+  
+  .carousel-control{
+    height:auto;
+  }
+  
+  .botones{
+    float: right;
+    position: relative;
+    top:30px;
+    right:20px;
+  }
+  
+  .botones button{
+    display:block;
+    padding: 10px 20px;
+    width:240px;
+    font-size: 16px;
+    background-color: #42bfdd;
+  }
+  
+  .botones button:hover{
+    background-color: #bbf6e4;
+  }

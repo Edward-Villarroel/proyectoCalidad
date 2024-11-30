@@ -1,0 +1,46 @@
+/*Formularios*/
+ #RRR{
+    display: flex;
+    justify-content: center;
+  }
+  #RRR2{
+    padding-top: 20px;
+    padding-bottom: 95px;
+  }
+  #c{
+    display: flex;
+    margin:auto;
+    align-content: center;
+  
+  }
+  #labelE{
+    padding-top: 25px;
+    padding-right: 25px;
+  }
+  #labelT{
+    padding-top: 25px;
+    padding-right: 25px;
+  }
+
+  #RR3{
+    padding-bottom: 100px;
+  }
+  
+#btn{
+    
+    background-color: #42BFDD !important;
+    border-bottom: #42BFDD;
+    width: 150px;
+}
+
+/*Tutorial*/
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+.formulario__input-error-activo {
+	display: block;
+}
+
+

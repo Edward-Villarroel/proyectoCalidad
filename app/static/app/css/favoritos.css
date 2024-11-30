@@ -1,0 +1,40 @@
+.card-title, .card-text{
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  
+  .card-text{
+    font-size: 16px;
+  }
+  
+  .card img{
+    height:380px;
+  }
+  
+  .card{
+    width:100%;
+  }
+  
+  .nov{
+    border-collapse: separate; 
+    border-spacing:40px;
+    display:flex;
+    margin:auto;
+    align-content: center;
+    
+  }
+  
+  h4, p{
+    text-decoration: none;
+    color:#333 !important;
+  }
+  
+  h1{
+    text-align: center;
+  }
+.container{
+    width:90%;
+    display:flex;
+    margin:auto;
+    align-content: center;
+}

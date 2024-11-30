@@ -1,0 +1,42 @@
+{% extends 'app/Base.html' %}
+
+{% load static %}
+
+{% block css %}    
+<link rel="stylesheet" href="{% static 'app/css/vendidos.css' %}">
+{% endblock %}
+
+{% block contenido %}
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-4">
+          <h2 class="num">N°: X</h2>
+          <img src="{% static 'app/image/cover/Placeholder_view_vector.svg.png' %}" alt="placeholder" style="padding-left: 25px; padding-top: 25px; padding-bottom: 25px; width: 275px; height: 275px;">
+        </div>
+
+        <div class="col-sm-8">
+          <div class="botones">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#carro">AGREGAR AL CARRO</button><br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fav">AGREGAR A FAVORITOS</button>
+          </div>
+          <div class="content">
+            <a href="">
+              <h2>XXXXXX</h2>
+              <h3>$XXX.XXX</h3>
+            </a>
+            <ul>
+              <li>Título: xxxxx</li>
+              <li>Editorial: xxxxx</li>
+              <li>Autor: xxxxx</li>
+              <li>Formato: xxxxx</li>
+              <li>N° páginas: xxxxx</li>
+          </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br>
+
+{% endblock %}

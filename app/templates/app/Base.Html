@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Base</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {% block css %}
+
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/css/custom.css' %}">
+    
+    
+
+
+
+
+<!-- VALIDACIONES CAMPOS -->
+<!--<script src="valid.js"></script><script src="test.js"></script>-->
+
+
+
+</head>
+<body>
+    <!--Header-->
+    <nav class="navbar navbar ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'app/image/logo.png' %}" height="60" class="d-inline-block align-top" style="position:relative;bottom:20px">
+          </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'Catalogo' %}">Catálogo</a></li>
+          <li><a href="{% url 'novedades' %}">Novedades</a></li>
+          <li><a href="{% url 'vendidos' %}">Más Vendidos</a></li>
+          <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+          {% if perms.app.add_articulo %}
+          <li><a href="{% url 'agregar' %}">Agregar</a></li>
+          {% endif %}
+          {% if perms.app.view_articulo %}
+          <li><a href="{% url 'listar' %}">Listar</a></li>
+          {% endif %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
+            <ul class="dropdown-menu" >
+
+              {% if user.is_authenticated %}
+              <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit"class="btn btn-dark">Cerrar sesion</button>
+              </form>
+              {% else %}
+              <li style="background-color: #084b83;"><a href="{% url 'registro' %}">Registro</a></li>
+              <li style="background-color: #084b83;"><a href="{% url 'login' %}">Iniciar sesión</a></li>
+              {% endif %}
+              <!--Ya iniciado (Cuenta / Log out)-->
+            </ul>
+          </li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'favoritos' %}"><span class="glyphicon glyphicon-heart"></span></a></li>
+            <li><a href="{% url 'carrito' %}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          {% endif %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Buscar">
+            </div>
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+          </form>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="contenedor General">
+
+        {% block contenido %}
+
+        {% endblock %}
+
+    </div>
+    <br>
+
+
+
+      <!--Footer-->
+      <footer>
+        <div class="f-item-con">
+            <div class="app-info">
+                <span class='app-name'>
+                  HARMONY BOOK STORE
+                </span>
+                <p><span style="color:white">Expande tu colección junto a nosotros: Cómics, Novelas Gráficas, Libros y Box Sets.</span></p>
+                <div class="sm"><img src="{% static 'app/image/ig_icon.webp' %}" width="20px"> <img src="{% static 'app/image/fb_icon.webp' %}" width="20px"> <img src="{% static 'app/image/twt_icon.png' %}" width="20px"> </div>
+            </div>
+            <div class="useful-links">
+              <div class="footer-title">INFORMACIÓN</div>
+                <ul>
+                    <li>Envíos</li>
+                    <li>Formas de pago</li>
+                    <li>Términos y condiciones</li>
+                    <li>Términos de servicio</li>
+                    <li>Política de reembolso</li>
+                    <li>Nosotros</li>
+                </ul>
+            </div>
+            <div class="help-sec">
+                <div class="footer-title">CONTÁCTANOS</div>
+                <ul>
+                    <li>Tienda: Antonia Lopez de Bello 191, Viña del Mar. Chile</li><br>
+                    <li>harmony.bookstore@gmail.com</li><br>
+                </ul>
+            </div>
+            <div class="g-i-t">
+                <div class="footer-title">¿ALGUNA CONSULTA? HÁZNOSLA SABER</div>
+                <form action="/" method="post" class="space-y-2">
+                    <input type="text" name="g-name" class="g-inp" id="g-name" placeholder='Nombre' />
+                    <input type="email" name="g-email" class="g-inp" id="g-email" placeholder='Email' />
+                    <textarea type="text" name="g-msg" class="g-inp h-40 resize-none" id="g-msg"
+                        placeholder='Mensaje...'></textarea>
+                    <button type="submit" class='f-btn'>Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class='cr-con'>Copyright &copy; 2024 | Hecho por SBF Company</div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% block js %}
+
+    {% endblock %}
+
+</body>
+</html>
